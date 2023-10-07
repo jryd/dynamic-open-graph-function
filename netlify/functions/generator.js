@@ -8,7 +8,7 @@ exports.handler = async function (event, context) {
   const browser = await puppeteer.launch({
     args: chromium.args,
     // executablePath: await executable,
-    executablePath: await chromium.executablePath,
+    executablePath: (await chromium.executablePath()),
     headless: true,
     // The optimum size for OG images.
     defaultViewport: {height: 630, width: 1200},
