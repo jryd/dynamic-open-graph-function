@@ -1,11 +1,8 @@
 const chromium = require('chrome-aws-lambda')
-const puppeteer = require('puppeteer-core')
+const puppeteer = require('puppeteer')
 const fs = require('fs')
 
 exports.handler = async function (event, context) {
-  // Use local Chrome when testing.
-  let localChrome = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-  // let executable = fs.existsSync(localChrome) ? localChrome : chromium.executablePath
 
   // Launch Chrome.
   const browser = await puppeteer.launch({
