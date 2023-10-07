@@ -1,16 +1,16 @@
-const chromium = require('chrome-aws-lambda')
-const puppeteer = require('puppeteer-core')
+const puppeteer = require("puppeteer");
+const chromium = require("@sparticuz/chromium");
 const fs = require('fs')
 
 exports.handler = async function (event, context) {
   // Use local Chrome when testing.
   let localChrome = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-  let executable = fs.existsSync(localChrome) ? localChrome : chromium.executablePath
+  let executable = fs.existsSync(localChrome) ? localChrome : await chromium.executablePath()
 
   // Launch Chrome.
   const browser = await puppeteer.launch({
     args: chromium.args,
-    executablePath: await executable,
+    executablePath: executable,
     headless: true,
     // The optimum size for OG images.
   })
