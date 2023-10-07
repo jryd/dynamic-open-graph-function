@@ -34,7 +34,7 @@ exports.handler = async function (event, context) {
     statusCode: 200,
     headers: {
       'Content-Type': 'image/png',
-      'Cache-Control': 's-maxage=86400',
+      'Cache-Control': 'public, s-maxage=86400',
     },
     body: (await page.screenshot()).toString('base64'),
     isBase64Encoded: true,
