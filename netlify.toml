@@ -1,2 +1,4 @@
 [[edge_functions]]
   cache = "manual"
+  path = "/generator"
+  function = "generator"
