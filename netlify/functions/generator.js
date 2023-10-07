@@ -1,5 +1,5 @@
-const chromium = require('chrome-aws-lambda')
-const puppeteer = require('puppeteer')
+const puppeteer = require("puppeteer");
+const chromium = require("@sparticuz/chromium");
 const fs = require('fs')
 
 exports.handler = async function (event, context) {
